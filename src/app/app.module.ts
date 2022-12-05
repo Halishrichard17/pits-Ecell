@@ -11,6 +11,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ResourceComponent } from './resource/resource.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     EventComponent,
     AboutComponent,
     TeamComponent,
+    ResourceComponent,
     
   ],
   imports: [

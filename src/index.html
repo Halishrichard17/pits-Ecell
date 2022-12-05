@@ -34,6 +34,63 @@
 
       <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700&amp;family=Montserrat:wght@200;300&amp;display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700&amp;family=Montserrat:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
- 
+      <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+
+
+
+
+        var doms = document.getElementsByClassName("glowy-blob");
+
+var selected = 0;
+
+for (var x = 0; x < doms.length; x++) {
+	for (var i = 0; i < doms[x].children.length; i++) {
+		doms[x].children[i].addEventListener("mousedown", function (e) {
+			selected = this;
+		});
+	}
+}
+
+window.addEventListener("mouseup", function (e) {
+	selected.style.animation = "bounceback 1s ease";
+	selected.style.animationFillMode = "forwards";
+	var lala = selected;
+	selected = null;
+
+	setTimeout(function () {
+		lala.style.animation = "";
+		lala.style.animationFillMode = "";
+		lala.style.left = "";
+		lala.style.top = "";
+	}, 1000);
+});
+
+window.addEventListener("mousemove", function (e) {
+	if (selected == null || !selected) return;
+	selected.style.left =
+		e.clientX -
+		selected.getBoundingClientRect().width / 2 -
+		window.innerWidth / 2 +
+		"px";
+	selected.style.top =
+		e.clientY -
+		selected.getBoundingClientRect().height / 2 -
+		window.innerHeight / 2 +
+		"px";
+	selected.style.animation = 0;
+});
+
+
+        
+        </script>
+    
 </body>
 </html>
