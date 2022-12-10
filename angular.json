@@ -93,6 +93,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "pits-Ecell:build:production",
+            "firebaseProject": "pits-ecell",
+            "firebaseHostingSite": "pits-ecell"
+          }
         }
       }
     }

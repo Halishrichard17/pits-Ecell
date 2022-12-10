@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pits-ecell": {
+      "hosting": {
+        "pits-Ecell": [
+          "pits-ecell"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pits-ecell"
+  }
+}
