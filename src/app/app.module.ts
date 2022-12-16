@@ -1,34 +1,40 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { EventComponent } from './event/event.component';
+import { UploadFormComponent } from './components/upload-form/upload-form.component';
+import { UploadListComponent } from './components/upload-list/upload-list.component';
+import { UploadDetailsComponent } from './components/upload-details/upload-details.component';
 import { AboutComponent } from './about/about.component';
-import { TeamComponent } from './team/team.component';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { EventComponent } from './event/event.component';
+import { HomeComponent } from './home/home.component';
 import { ResourceComponent } from './resource/resource.component';
+import { TeamComponent } from './team/team.component';
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
+    UploadFormComponent,
+    UploadListComponent,
+    UploadDetailsComponent,
     HomeComponent,
     EventComponent,
     AboutComponent,
     TeamComponent,
     ResourceComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatMenuModule,
-    MatProgressSpinnerModule,
-    BrowserAnimationsModule,
-    MatExpansionModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

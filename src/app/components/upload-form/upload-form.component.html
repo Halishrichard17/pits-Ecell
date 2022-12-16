@@ -1,0 +1,57 @@
+
+
+
+
+
+
+
+
+
+<div class="main-block">
+  <form action="/">
+    <h1>Admin controller</h1>
+    <fieldset>
+      <legend>
+        <h3>Event Add</h3>
+      </legend>
+      <div  class="account-details">
+        <div><label>Event Name:</label><input type="text" name="event name" required></div>
+        <div><label>Description:</label><input type="text" name="description" required></div>
+       <div class="filediv">
+        <label>
+          <input
+            type="file"
+            class="text-nowrap text-truncate"
+            (change)="selectFile($event)"
+          />
+        </label>
+        
+        <button
+          class="btn btn-success btn-sm"
+          [disabled]="!selectedFiles"
+          (click)="upload()"
+        >
+          Upload
+        </button>
+        
+        <div *ngIf="currentFileUpload" class="progress mt-2">
+          <div
+            class="progress-bar progress-bar-info"
+            role="progressbar"
+            attr.aria-valuenow="{{ percentage }}"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [ngStyle]="{ width: percentage + '%' }"
+          >
+            {{ percentage }}%
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </fieldset>
+   
+   
+    <button type="submit" href="/">Submit</button>
+  </form>
+  </div> 
