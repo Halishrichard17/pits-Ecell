@@ -53,3 +53,6 @@
     -o-object-fit: cover;
        object-fit: cover;
   }
+  .btn {
+    height: 30px;
+  }
